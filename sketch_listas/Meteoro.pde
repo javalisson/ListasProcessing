@@ -15,5 +15,15 @@ class Meteoro {
   
   void mover() {
     this.posicao.add(PVector.mult(this.direcao, this.velocidade));
+    if (posicao.x > width) posicao.x -= width;
+    if (posicao.x < 0) posicao.x += width;
+    if (posicao.y > height) posicao.y -= height;
+    if (posicao.y < 0) posicao.y += height;
+  }
+  
+  void desenhar() {
+    noStroke();
+    fill(cor);
+    ellipse(posicao.x, posicao.y, tamanho, tamanho);
   }
 }
